@@ -6,29 +6,42 @@
 /*   By: ybel-hac <ybel-hac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 19:01:26 by ybel-hac          #+#    #+#             */
-/*   Updated: 2022/12/11 22:51:13 by ybel-hac         ###   ########.fr       */
+/*   Updated: 2022/12/13 18:13:35 by ybel-hac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-/*
-void	check_args(int len, char **argv)
+
+char	**check_args(int *len, char **argv)
 {
 	int i;
+	int j;
 	char **args;
+	int temp_nb;
 
 	i = 0;
-	if (len == 1 && argv[1])
+	args = argv;
+	if (--*len == 1 && argv[0])
 	{
-		args = ft_split(argv, ' ');
-		
+		args = ft_split(argv[0], ' ');
 	}
-	while ()
+	stack_sorted(args);
+	temp_nb = ft_atoi(args[i]);
+	while (args[i])
 	{
-		
+		j = i + 1;
+		while (args[j])
+		{
+			if (ft_atoi(args[i]) == ft_atoi(args[j]))
+				ft_error("some integers are duplicated\n");
+			j++;
+		}
+		i++;
 	}
+	*len = i;
+	return (args);
 }
-
+/*
 int	get_tab_len(char **tab)
 {
 	int i;

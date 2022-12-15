@@ -6,7 +6,7 @@
 /*   By: ybel-hac <ybel-hac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 17:50:34 by ybel-hac          #+#    #+#             */
-/*   Updated: 2022/12/11 19:43:22 by ybel-hac         ###   ########.fr       */
+/*   Updated: 2022/12/13 15:46:14 by ybel-hac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,24 +21,26 @@ size_t	ft_strlen(const char *s)
 		i++;
 	return (i);
 }
-/*
-int	stack_sorted(t_stack head, int len)
-{
-	int n1;
-	int n2;
 
-	while (head)
+void	stack_sorted(char **args)
+{
+	int i;
+	int j;
+
+	i = 0;
+	j = 0;
+	while (args[i])
+		i++;
+	while (j < i - 1)
 	{
-		n1 = head.num;
-		n2 = head.next->num;
-		if (n1 < n2)
-			head = head.next;
+		if (ft_atoi(args[j]) < ft_atoi(args[j + 1]))
+			j++;
 		else
-			return (0);
+			return ;
 	}
-	return (1);
+	exit(1);
 }
-*/
+
 static int	skip_sign(char *nb, int *i, int *sign)
 {
 	int j;

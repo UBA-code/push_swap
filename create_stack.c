@@ -6,7 +6,7 @@
 /*   By: ybel-hac <ybel-hac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 21:36:18 by ybel-hac          #+#    #+#             */
-/*   Updated: 2022/12/12 00:38:53 by ybel-hac         ###   ########.fr       */
+/*   Updated: 2022/12/13 16:24:08 by ybel-hac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ t_stack	*create_stack(char **argv, int len)
 	t_stack *stack;
 	int i;
 
-	i = 1;
+	i = 0;
 	stack = NULL;
 	while (len > 0)
 	{

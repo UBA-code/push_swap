@@ -1,37 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   actions_2.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ybel-hac <ybel-hac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/11 18:11:12 by ybel-hac          #+#    #+#             */
-/*   Updated: 2022/12/15 17:37:45 by ybel-hac         ###   ########.fr       */
+/*   Created: 2022/12/13 12:55:05 by ybel-hac          #+#    #+#             */
+/*   Updated: 2022/12/13 12:57:57 by ybel-hac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "push_swap.c"
 
-void	printf_list(t_stack *head)
+void	ss(t_stack **stack_a, t_stack **stack_b)
 {
-	t_stack *temp;
-
-	temp = head;
-	while (temp)
-	{
-		printf("%d\n", temp->num);
-		temp = temp->next;
-	}
+	swap_top_two(stack_a);
+	swap_top_two(stack_b);
 }
 
-int main (int argc, char **argv)
+void	rr(t_stack **stack_a, t_stack **stack_b)
 {
-	t_stack *stack_a;
-	t_stack *stack_b;
-	char **args;
+	swap_top_bottom(stack_a);
+	swap_top_bottom(stack_b);
+}
 
-	args = check_args(&argc, argv + 1);
-	stack_a = create_stack(args, argc);
-	stack_b = create_stack(args, argc);
-	return (0);
+void	rrr(t_stack **stack_a, t_stack **stack_b)
+{
+	swap_bottom_top(stack_a);
+	swap_bottom_top(stack_b);
 }
