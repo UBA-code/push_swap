@@ -1,3 +1,5 @@
+
+void	ft_pustr(char *str);
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
@@ -29,7 +31,6 @@ typedef struct s_stack
 char	**ft_split(char const *s, char c);
 char	*ft_strdup(const char *s1);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
-static	char	*ft_strncpy(char *dest, char *src, size_t n);
 size_t	ft_strlen(const char *s);
 void	ft_error(char *msg);
 int		ft_atoi(char *nb);
@@ -45,4 +46,18 @@ void	ss(t_stack **stack_a, t_stack **stack_b);
 void	rr(t_stack **stack_a, t_stack **stack_b);
 void	rrr(t_stack **stack_a, t_stack **stack_b);
 char	**check_args(int *len, char **argv);
+void	ft_putstr(char *str);
+int	get_last(t_stack *stack);
+int	case_one(t_stack **stack);
+int	case_two(t_stack **stack);
+int	case_three(t_stack **stack);
+int	case_four(t_stack **stack);
+int	case_five(t_stack **stack);
+void	sort_three(t_stack **stack);
+int get_tab_len(char **tab);
+void	sort_five(t_stack **stack_a, t_stack **stack_b);
+int	get_max(t_stack *stack);
+int	get_min(t_stack *stack);
+void sort_hundred(t_stack **stack_a, t_stack **stack_b);
+
 #endif

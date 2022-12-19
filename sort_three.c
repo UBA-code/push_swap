@@ -1,31 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   actions_2.c                                        :+:      :+:    :+:   */
+/*   sort_three.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ybel-hac <ybel-hac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/13 12:55:05 by ybel-hac          #+#    #+#             */
-/*   Updated: 2022/12/15 22:54:34 by ybel-hac         ###   ########.fr       */
+/*   Created: 2022/12/15 18:11:15 by ybel-hac          #+#    #+#             */
+/*   Updated: 2022/12/16 19:00:55 by ybel-hac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ss(t_stack **stack_a, t_stack **stack_b)
+void	sort_three(t_stack **stack)
 {
-	swap_top_two(stack_a);
-	swap_top_two(stack_b);
-}
-
-void	rr(t_stack **stack_a, t_stack **stack_b)
-{
-	swap_top_bottom(stack_a);
-	swap_top_bottom(stack_b);
-}
-
-void	rrr(t_stack **stack_a, t_stack **stack_b)
-{
-	swap_bottom_top(stack_a);
-	swap_bottom_top(stack_b);
+	if (case_one(stack))
+		return ;
+	if (case_two(stack))
+		return ;
+	if (case_three(stack))
+		return ;
+	if (case_four(stack))
+		return ;
+	if (case_five(stack))
+		return ;
 }

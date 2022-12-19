@@ -6,7 +6,7 @@
 /*   By: ybel-hac <ybel-hac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 16:25:52 by ybel-hac          #+#    #+#             */
-/*   Updated: 2022/12/13 00:11:40 by ybel-hac         ###   ########.fr       */
+/*   Updated: 2022/12/16 19:50:42 by ybel-hac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,12 +28,11 @@ void	swap_top_two(t_stack **stack)
 
 void	swap_top_bottom(t_stack **stack)
 {
-	t_stack	*first;
 	t_stack	*last;
 	t_stack	*temp;
 
 	last = *stack;
-	temp = last;
+	temp = *stack;
 	*stack = last->next;
 	while (last->next)
 		last = last->next;
@@ -45,7 +44,6 @@ void	swap_bottom_top(t_stack	**stack)
 {
 	t_stack *first;
 	t_stack *last;
-	t_stack temp;
 	t_stack	*before_last;
 
 	first = *stack;
@@ -65,10 +63,12 @@ void	push_top_a(t_stack **stack_a, t_stack **stack_b)
 	t_stack	*element_a;
 	t_stack	*element_b;
 
+	element_a = *stack_a;
 	element_b = *stack_b;
 	*stack_b = element_b->next;
-	element_a->next = *stack_a;
-	*stack_a = element_a;
+	element_b->next = *stack_a;
+	*stack_a = element_b;
+	ft_putstr("pa\n");
 }
 
 void	push_top_b(t_stack **stack_a, t_stack **stack_b)
@@ -81,4 +81,5 @@ void	push_top_b(t_stack **stack_a, t_stack **stack_b)
 	element_b = *stack_b;
 	element_a->next = element_b;
 	*stack_b = element_a;
+	ft_putstr("pb\n");
 }

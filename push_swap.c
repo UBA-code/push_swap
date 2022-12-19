@@ -6,13 +6,13 @@
 /*   By: ybel-hac <ybel-hac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 18:11:12 by ybel-hac          #+#    #+#             */
-/*   Updated: 2022/12/15 17:37:45 by ybel-hac         ###   ########.fr       */
+/*   Updated: 2022/12/18 19:26:35 by ybel-hac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	printf_list(t_stack *head)
+void	print_list(t_stack *head)
 {
 	t_stack *temp;
 
@@ -24,6 +24,7 @@ void	printf_list(t_stack *head)
 	}
 }
 
+
 int main (int argc, char **argv)
 {
 	t_stack *stack_a;
@@ -32,6 +33,15 @@ int main (int argc, char **argv)
 
 	args = check_args(&argc, argv + 1);
 	stack_a = create_stack(args, argc);
-	stack_b = create_stack(args, argc);
+	stack_b = NULL;
+	// sort_three(&stack_a);
+	// sort_five(&stack_a, &stack_b);
+	sort_hundred(&stack_a, &stack_b);
+	/*
+	printf("\nstack a\n\n");
+	print_list(stack_a);
+	printf("------------\nstack b\n\n");
+	print_list(stack_b);
+	*/
 	return (0);
 }

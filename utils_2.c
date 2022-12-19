@@ -1,31 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   actions_2.c                                        :+:      :+:    :+:   */
+/*   utils_2.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ybel-hac <ybel-hac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/13 12:55:05 by ybel-hac          #+#    #+#             */
-/*   Updated: 2022/12/15 22:54:34 by ybel-hac         ###   ########.fr       */
+/*   Created: 2022/12/15 18:23:52 by ybel-hac          #+#    #+#             */
+/*   Updated: 2022/12/16 15:25:51 by ybel-hac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ss(t_stack **stack_a, t_stack **stack_b)
+void	ft_putstr(char *str)
 {
-	swap_top_two(stack_a);
-	swap_top_two(stack_b);
+	int i;
+
+	i = 0;
+	while (str[i])
+	{
+		write(1, &str[i], 1);
+		i++;
+	}
 }
 
-void	rr(t_stack **stack_a, t_stack **stack_b)
+int	get_last(t_stack *stack)
 {
-	swap_top_bottom(stack_a);
-	swap_top_bottom(stack_b);
+	while (stack->next)
+		stack = stack->next;
+	return (stack->num);
 }
 
-void	rrr(t_stack **stack_a, t_stack **stack_b)
+int get_tab_len(char **tab)
 {
-	swap_bottom_top(stack_a);
-	swap_bottom_top(stack_b);
+	int i;
+
+	i = 0;
+	while (tab[i])
+		i++;
+	return (i);
 }

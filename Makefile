@@ -1,5 +1,6 @@
-SRCS = check_utils.c ft_calloc.c ft_split.c ft_strdup.c ft_substr.c push_swap.c utils.c \
-		create_stack.c actions.c
+SRCS = actions.c actions_2.c cases.c check_utils.c create_stack.c ft_calloc.c \
+	ft_split.c ft_strdup.c ft_substr.c push_swap.c sort_three.c utils.c utils_2.c \
+	sort_five.c sort_hundred.c
 OBG = $(SRCS:.c=.o)
 # CFLAGS = -Wall -Werror -Wextra
 NAME = push_swap
