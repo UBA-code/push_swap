@@ -6,20 +6,11 @@
 /*   By: ybel-hac <ybel-hac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/18 14:15:28 by ybel-hac          #+#    #+#             */
-/*   Updated: 2022/12/20 20:06:20 by ybel-hac         ###   ########.fr       */
+/*   Updated: 2022/12/21 22:54:50 by ybel-hac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-typedef struct s_sort_hundred_utils
-{
-	int min;
-	int max;
-	int min_position;
-	int max_position;
-	int counter;
-} sort_utils;
 
 int get_size(t_stack *stack)
 {
@@ -58,36 +49,24 @@ int get_position(t_stack *stack, int num)
 	return (0);
 }
 
-void swap_min_top(t_stack **stack_a, t_stack **stack_b)
+void	sort(char *str, t_stack *stack)
 {
-	sort_utils utils;
+	int i;
+	int x;
 
-	utils.counter = 0;
-	while (*stack_a)
+	i = 0;
+	while (stack->next)
 	{
-		utils.min = get_min(*stack_a);
-		utils.max = get_max(*stack_a);
-		utils.min_position = get_position(*stack_a, utils.min);
-		utils.max_position = get_position(*stack_a, utils.max);
-		if ((*stack_a)->num == utils.min)
-		{
-			push_top_b(stack_a, stack_b);
-			continue;
-		}
-		else if ((*stack_a)->num == utils.max)
-		{
-			push_top_b(stack_a, stack_b);
-			swap_top_bottom(stack_b);
-			ft_putstr("rb\n");
-			continue;
-		}
-		if (utils.min_position == 1)
-		
+		str[i] = 
 	}
 }
 
 void sort_hundred(t_stack **stack_a, t_stack **stack_b)
 {
+	char *sorted;
+
+	sorted = malloc(sizeof(char) * (get_size(stack_a) + 1));
+	sort(sorted, *stack_a);
 	while (*stack_a)
 	{
 		swap_min_top(stack_a);
