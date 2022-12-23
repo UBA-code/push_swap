@@ -59,5 +59,6 @@ void	sort_five(t_stack **stack_a, t_stack **stack_b);
 int	get_max(t_stack *stack);
 int	get_min(t_stack *stack);
 void sort_hundred(t_stack **stack_a, t_stack **stack_b);
+void	ft_swap(int *n1, int *n2);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: ybel-hac <ybel-hac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 18:23:52 by ybel-hac          #+#    #+#             */
-/*   Updated: 2022/12/16 15:25:51 by ybel-hac         ###   ########.fr       */
+/*   Updated: 2022/12/22 16:05:33 by ybel-hac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,4 +39,13 @@ int get_tab_len(char **tab)
 	while (tab[i])
 		i++;
 	return (i);
+}
+
+void	ft_swap(int *n1, int *n2)
+{
+	int temp;
+
+	temp = *n1;
+	*n1 = *n2;
+	*n2 = temp;
 }

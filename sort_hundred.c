@@ -6,7 +6,7 @@
 /*   By: ybel-hac <ybel-hac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/18 14:15:28 by ybel-hac          #+#    #+#             */
-/*   Updated: 2022/12/21 22:54:50 by ybel-hac         ###   ########.fr       */
+/*   Updated: 2022/12/22 20:23:46 by ybel-hac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,29 +49,57 @@ int get_position(t_stack *stack, int num)
 	return (0);
 }
 
-void	sort(char *str, t_stack *stack)
+void	stack_to_arr(t_stack *stack, int *tab)
+{
+	int i;
+
+	i = 0;
+	while (stack->next)
+	{
+		tab[i] = stack->num;
+		stack = stack->next;
+		i++;
+	}
+	tab[i] = stack->num;
+}
+
+void	sort(int *tab, t_stack *stack, int size)
 {
 	int i;
 	int x;
 
 	i = 0;
-	while (stack->next)
+	stack_to_arr(stack, tab);
+	while (i < size)
 	{
-		str[i] = 
+		x = i;
+		while (x < size)
+		{
+			if (tab[x] < tab[i])
+				ft_swap(&tab[i], &tab[x]);
+			x++;
+		}
+		i++;
 	}
+}
+
+void chunks(t_stack **stack_a, t_stack **stack_b, int *tab)
+{
+		
 }
 
 void sort_hundred(t_stack **stack_a, t_stack **stack_b)
 {
-	char *sorted;
+	int *tab;
+	int size;
+	int i;
 
-	sorted = malloc(sizeof(char) * (get_size(stack_a) + 1));
-	sort(sorted, *stack_a);
+	i = 0;
+	size = get_size(stack_a);
+	tab = malloc(sizeof(int) * size);
+	sort(&tab, *stack_a, size);
 	while (*stack_a)
 	{
-		swap_min_top(stack_a);
-		push_top_b(stack_a, stack_b);
+		chunks(stack_a, stack_b, &tab);
 	}
-	while (*stack_b)
-		push_top_a(stack_a, stack_b);
 }
