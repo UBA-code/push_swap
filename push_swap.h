@@ -1,5 +1,3 @@
-
-void	ft_pustr(char *str);
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
@@ -8,7 +6,7 @@ void	ft_pustr(char *str);
 /*   By: ybel-hac <ybel-hac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 18:08:30 by ybel-hac          #+#    #+#             */
-/*   Updated: 2022/12/13 17:57:05 by ybel-hac         ###   ########.fr       */
+/*   Updated: 2022/12/25 01:45:19 by ybel-hac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +25,16 @@ typedef struct s_stack
 	int				num;
 	struct s_stack	*next;
 }	t_stack;
+
+typedef struct s_chunks_utils
+{
+	int *tab;
+	int size;
+	int i;
+	int chunks_size;
+	t_stack **stack_a;
+	t_stack **stack_b;
+} chunks_utils;
 
 char	**ft_split(char const *s, char c);
 char	*ft_strdup(const char *s1);
@@ -60,5 +68,6 @@ int	get_max(t_stack *stack);
 int	get_min(t_stack *stack);
 void sort_hundred(t_stack **stack_a, t_stack **stack_b);
 void	ft_swap(int *n1, int *n2);
+void move_top(chunks_utils utils, t_stack **stack, int num);
 
 #endif
