@@ -6,7 +6,7 @@
 /*   By: ybel-hac <ybel-hac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/18 14:15:28 by ybel-hac          #+#    #+#             */
-/*   Updated: 2022/12/26 01:11:21 by ybel-hac         ###   ########.fr       */
+/*   Updated: 2022/12/27 23:09:00 by ybel-hac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,7 +94,7 @@ void chunk_work(chunks_utils *utils, int min, int max)
 	{
 		if (current->num >= min && current->num <= max)
 		{
-			move_top(*utils, utils->stack_a, current->num);
+			move_top(*utils, current->num, min, max);
 			push_top_b(utils->stack_a, utils->stack_b);
 			current = *(utils->stack_a);
 			continue;
@@ -111,7 +111,6 @@ void chunks(chunks_utils *utils, int *tab)
 	static int last;
 
 	chunk_size_temp = utils->chunks_size;
-	// here maybe sigfault will be get because the chunks size not in all time fixed
 	max = 0;
 	while (last < utils->size && chunk_size_temp > 0)
 	{
@@ -124,20 +123,59 @@ void chunks(chunks_utils *utils, int *tab)
 	chunk_work(utils, min, max);
 }
 
+void	best_move_top(chunks_utils utils, t_stack **stack, int num)
+{
+	t_stack *current;
+	int i;
+
+	i = 0;
+	current = *stack;
+	while (current)
+	{
+		if (current->num == num && i <= utils.size / 2)
+		{
+			while ((*stack)->num != num)
+			{
+				swap_top_bottom(stack);
+				ft_putstr("ra\n");
+			}
+			return ;
+		}
+		if (current->num == num && i >= utils.size / 2)
+		{
+			while ((*stack)->num != num)
+			{
+				swap_bottom_top(stack);
+				ft_putstr("rra\n");
+			}
+			return ;
+		}
+		i++;
+		current = current->next;
+	}
+}
+
 void sort_hundred(t_stack **stack_a, t_stack **stack_b)
 {
 	chunks_utils utils;
+	int max;
 
 	utils.size = get_size(*stack_a);
-	utils.chunks_size = utils.size / 10;
+	utils.chunks_size = utils.size / 8;
 	utils.i = 0;
 	utils.tab = malloc(sizeof(int) * utils.size);
 	utils.stack_a = stack_a;
 	utils.stack_b = stack_b;
-	sort(utils.tab, *stack_a, utils.size);
+	sort(utils.tab, *stack_a, utils.size);                 
 	while (*stack_a)
 	{
 		chunks(&utils, &(utils.tab[utils.i]));
 		utils.i += utils.chunks_size;
+	}
+	while (*stack_b)
+	{
+		max = get_max(*stack_b);
+		best_move_top(utils, stack_b, max);
+		push_top_a(stack_a, stack_b);
 	}
 }

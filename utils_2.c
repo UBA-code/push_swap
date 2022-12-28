@@ -6,7 +6,7 @@
 /*   By: ybel-hac <ybel-hac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 18:23:52 by ybel-hac          #+#    #+#             */
-/*   Updated: 2022/12/26 01:09:52 by ybel-hac         ###   ########.fr       */
+/*   Updated: 2022/12/27 23:03:16 by ybel-hac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,34 +50,48 @@ void ft_swap(int *n1, int *n2)
 	*n2 = temp;
 }
 
-void move_top(chunks_utils utils, t_stack **stack, int num)
+int check_current(chunks_utils utils, int num, int min, int max)
+{
+	if (num >= min && num <= max)
+	{
+		push_top_b(utils.stack_a, utils.stack_b);
+		return (1);
+	}
+	return (0);
+}
+
+void move_top(chunks_utils utils, int num, int min, int max)
 {
 	int i;
 	t_stack *current;
 
-	current = *stack;
+	current = *(utils.stack_a);
 	i = 0;
 	while (current)
 	{
-		if (current->num == num)
+		if (current->num == num && i <= utils.size / 2)
 		{
-			if (i <= utils.size / 2)
+			while ((*(utils.stack_a))->num != num)
 			{
-				while ((*stack)->num != num)
-				{
-					swap_top_bottom(stack);
-					ft_putstr("ra\n");
-				}
-				return;
+				if (check_current(utils, (*(utils.stack_a))->num, min, max))
+					continue;
+				swap_top_bottom(utils.stack_a);
+				ft_putstr("ra\n");
 			}
-			while ((*stack)->num != num)
+			return ;
+		}
+		else if (current->num == num && i >= utils.size / 2)
+		{
+			while ((*(utils.stack_a))->num != num)
 			{
-				swap_bottom_top(stack);
+				if (check_current(utils, (*(utils.stack_a))->num, min, max))
+					continue;
+				swap_bottom_top(utils.stack_a);
 				ft_putstr("rra\n");
 			}
-			return;
+			return ;
 		}
-		i++;
 		current = current->next;
+		i++;
 	}
 }
