@@ -6,7 +6,7 @@
 /*   By: ybel-hac <ybel-hac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 18:23:52 by ybel-hac          #+#    #+#             */
-/*   Updated: 2022/12/27 23:03:16 by ybel-hac         ###   ########.fr       */
+/*   Updated: 2023/01/01 20:47:08 by ybel-hac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,7 @@ void move_top(chunks_utils utils, int num, int min, int max)
 	i = 0;
 	while (current)
 	{
+		// if num in top of stack
 		if (current->num == num && i <= utils.size / 2)
 		{
 			while ((*(utils.stack_a))->num != num)
@@ -80,6 +81,7 @@ void move_top(chunks_utils utils, int num, int min, int max)
 			}
 			return ;
 		}
+		// if  num in bottom of stack
 		else if (current->num == num && i >= utils.size / 2)
 		{
 			while ((*(utils.stack_a))->num != num)

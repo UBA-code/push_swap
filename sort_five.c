@@ -6,7 +6,7 @@
 /*   By: ybel-hac <ybel-hac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/16 15:36:58 by ybel-hac          #+#    #+#             */
-/*   Updated: 2022/12/19 15:25:52 by ybel-hac         ###   ########.fr       */
+/*   Updated: 2022/12/30 00:14:57 by ybel-hac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,9 @@ int	get_max(t_stack *stack)
 {
 	int num;
 
-	num = 0;
+	if (!stack)
+		return (0);
+	num = stack->num;
 	while (stack->next)
 	{
 		if (num < stack->num)
@@ -32,6 +34,8 @@ int	get_min(t_stack *stack)
 {
 	int num;
 
+	if (!stack)
+		return (0);
 	num = get_max(stack);
 	while (stack->next)
 	{
