@@ -6,7 +6,7 @@
 /*   By: ybel-hac <ybel-hac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/18 14:15:28 by ybel-hac          #+#    #+#             */
-/*   Updated: 2023/01/01 20:46:58 by ybel-hac         ###   ########.fr       */
+/*   Updated: 2023/01/02 01:23:13 by ybel-hac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -122,61 +122,29 @@ void chunks(chunks_utils *utils, int *tab)
 	chunk_work(utils, min, max);
 }
 
-void	best_move_top(chunks_utils utils, t_stack **stack, int num)
-{
-	t_stack *current;
-	int i;
-
-	i = 0;
-	current = *stack;
-	while (current)
-	{
-		if (current->num == num && i <= utils.size / 2)
-		{
-			while ((*stack)->num != num)
-			{
-				swap_top_bottom(stack);
-				ft_putstr("ra\n");
-			}
-			return ;
-		}
-		if (current->num == num && i >= utils.size / 2)
-		{
-			while ((*stack)->num != num)
-			{
-				swap_bottom_top(stack);
-				ft_putstr("rra\n");
-			}
-			return ;
-		}
-		i++;
-		current = current->next;
-	}
-}
-
 void sort_hundred(t_stack **stack_a, t_stack **stack_b)
 {
 	chunks_utils utils;
 	int max;
 
 	utils.size = get_size(*stack_a);
-	utils.chunks_size = utils.size / 8;
 	utils.i = 0;
 	utils.tab = malloc(sizeof(int) * utils.size);
 	utils.stack_a = stack_a;
 	utils.stack_b = stack_b;
-	sort(utils.tab, *stack_a, utils.size);                 
-	while (*stack_a)
+	sort(utils.tab, *stack_a, utils.size);
+	while ((*stack_a)->next)
 	{
+		utils.chunks_size = get_size(*stack_a) / 2;
 		chunks(&utils, &(utils.tab[utils.i]));
 		utils.i += utils.chunks_size;
 	}
-	/*
+	
 	while (*stack_b)
 	{
 		max = get_max(*stack_b);
 		best_move_top(utils, stack_b, max);
 		push_top_a(stack_a, stack_b);
 	}
-	*/
+	
 }

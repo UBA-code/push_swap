@@ -6,7 +6,7 @@
 /*   By: ybel-hac <ybel-hac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 18:08:30 by ybel-hac          #+#    #+#             */
-/*   Updated: 2022/12/26 15:28:49 by ybel-hac         ###   ########.fr       */
+/*   Updated: 2023/01/02 01:55:41 by ybel-hac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,9 +45,9 @@ int		ft_atoi(char *nb);
 void	stack_sorted(char **args);
 void	lst_new_add_back(int nb, t_stack **head);
 t_stack	*create_stack(char **argv, int len);
-void	swap_top_two(t_stack **stack);
-void	swap_top_bottom(t_stack **stack);
-void	swap_bottom_top(t_stack	**stack);
+void	swap_top_two(t_stack **stack, char *str);
+void	swap_top_bottom(t_stack **stack, char *str);
+void	swap_bottom_top(t_stack	**stack, char *str);
 void	push_top_a(t_stack **stack_a, t_stack **stack_b);
 void	push_top_b(t_stack **stack_a, t_stack **stack_b);
 void	ss(t_stack **stack_a, t_stack **stack_b);
@@ -69,5 +69,10 @@ int	get_min(t_stack *stack);
 void sort_hundred(t_stack **stack_a, t_stack **stack_b);
 void	ft_swap(int *n1, int *n2);
 void move_top(chunks_utils utils, int num, int min, int max);
+void	best_move_top(chunks_utils utils, t_stack **stack, int num);
+
+
+
+void	print_list(t_stack *head);
 
 #endif

@@ -6,13 +6,13 @@
 /*   By: ybel-hac <ybel-hac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 16:25:52 by ybel-hac          #+#    #+#             */
-/*   Updated: 2022/12/16 19:50:42 by ybel-hac         ###   ########.fr       */
+/*   Updated: 2023/01/02 01:53:50 by ybel-hac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	swap_top_two(t_stack **stack)
+void	swap_top_two(t_stack **stack, char *str)
 {
 	t_stack *first;
 	t_stack *second;
@@ -24,9 +24,10 @@ void	swap_top_two(t_stack **stack)
 	temp = *second;
 	second->next = first;
 	first->next = temp.next;
+	ft_putstr(str);
 }
 
-void	swap_top_bottom(t_stack **stack)
+void	swap_top_bottom(t_stack **stack, char *str)
 {
 	t_stack	*last;
 	t_stack	*temp;
@@ -38,9 +39,10 @@ void	swap_top_bottom(t_stack **stack)
 		last = last->next;
 	last->next = temp;
 	temp->next = NULL;
+	ft_putstr(str);
 }
 
-void	swap_bottom_top(t_stack	**stack)
+void	swap_bottom_top(t_stack	**stack, char *str)
 {
 	t_stack *first;
 	t_stack *last;
@@ -56,6 +58,7 @@ void	swap_bottom_top(t_stack	**stack)
 	*stack = last;
 	last->next = first;
 	before_last->next = NULL;
+	ft_putstr(str);
 }
 
 void	push_top_a(t_stack **stack_a, t_stack **stack_b)
