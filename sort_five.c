@@ -6,7 +6,7 @@
 /*   By: ybel-hac <ybel-hac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/16 15:36:58 by ybel-hac          #+#    #+#             */
-/*   Updated: 2022/12/30 00:14:57 by ybel-hac         ###   ########.fr       */
+/*   Updated: 2023/01/02 02:26:07 by ybel-hac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,8 +65,7 @@ void	swap_max_min_top(t_stack **stack_a, t_stack **stack_b)
 			counter++;
 			continue ;
 		}
-		swap_top_bottom(stack_a);
-		ft_putstr("ra\n");
+		swap_top_bottom(stack_a, "ra\n");
 	}
 }
 
@@ -78,13 +77,9 @@ void	sort_five(t_stack **stack_a, t_stack **stack_b)
 	swap_max_min_top(stack_a, stack_b);
 	sort_three(stack_a);
 	if ((*stack_b)->num != min)
-	{
-		swap_top_two(stack_b);
-		ft_putstr("sb\n");
-	}
+		swap_top_two(stack_b, "sb\n");
 	push_top_a(stack_a, stack_b);
 	push_top_a(stack_a, stack_b);
-	swap_top_bottom(stack_a);
-	ft_putstr("ra\n");
+	swap_top_bottom(stack_a, "ra\n");
 }
 
