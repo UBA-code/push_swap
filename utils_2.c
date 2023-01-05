@@ -6,7 +6,7 @@
 /*   By: ybel-hac <ybel-hac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 18:23:52 by ybel-hac          #+#    #+#             */
-/*   Updated: 2023/01/05 13:48:54 by ybel-hac         ###   ########.fr       */
+/*   Updated: 2023/01/05 22:12:39 by ybel-hac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,6 +100,8 @@ void	best_move_top(chunks_utils utils, t_stack **stack, int num)
 
 	i = 0;
 	current = *stack;
+	if (!current)
+		return ;
 	while (current && ++i)
 	{
 		if (current->num == num && i <= get_size(*(utils.stack_b)) / 2)
