@@ -6,7 +6,7 @@
 /*   By: ybel-hac <ybel-hac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 18:08:30 by ybel-hac          #+#    #+#             */
-/*   Updated: 2023/01/02 01:55:41 by ybel-hac         ###   ########.fr       */
+/*   Updated: 2023/01/03 02:34:53 by ybel-hac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,8 +70,10 @@ void sort_hundred(t_stack **stack_a, t_stack **stack_b);
 void	ft_swap(int *n1, int *n2);
 void move_top(chunks_utils utils, int num, int min, int max);
 void	best_move_top(chunks_utils utils, t_stack **stack, int num);
-
-
+int get_size(t_stack *stack);
+int get_position(t_stack *stack, int num);
+void stack_to_arr(t_stack *stack, int *tab);
+void sort(int *tab, t_stack *stack, int size);
 
 void	print_list(t_stack *head);
 
