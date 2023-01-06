@@ -6,7 +6,7 @@
 /*   By: ybel-hac <ybel-hac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/05 22:33:37 by ybel-hac          #+#    #+#             */
-/*   Updated: 2023/01/05 22:34:58 by ybel-hac         ###   ########.fr       */
+/*   Updated: 2023/01/05 22:46:40 by ybel-hac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,17 +65,16 @@ void last_sort(t_stack **stack_a, t_stack **stack_b)
 	utils.stack_a = stack_a;
 	utils.stack_b = stack_b;
 	sort(utils.tab, *stack_a, utils.size);
-
 	while (*stack_a)
 	{
 		chunks(&utils, &(utils.tab[utils.i]));
 		utils.i += utils.chunks_size;
 	}
-
 	while (*stack_b)
 	{
 		max = get_max(*stack_b);
 		best_move_top(utils, stack_b, max);
 		push_top_a(stack_a, stack_b);
 	}
+	free(utils.tab);
 }
