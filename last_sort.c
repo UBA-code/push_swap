@@ -6,11 +6,26 @@
 /*   By: ybel-hac <ybel-hac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/05 22:33:37 by ybel-hac          #+#    #+#             */
-/*   Updated: 2023/01/05 22:46:40 by ybel-hac         ###   ########.fr       */
+/*   Updated: 2023/01/07 00:34:16 by ybel-hac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+int get_pos(int *tab, int size, int num)
+{
+	int i;
+
+	i = 0;
+	while (size > 0)
+	{
+		if (tab[i] == num)
+			return (i);
+		i++;
+		size--;
+	}
+	return (0);
+}
 
 // search in range of chanks for numbers and pushing him to stack b
 void chunk_work(chunks_utils *utils, int min, int max)
@@ -24,6 +39,8 @@ void chunk_work(chunks_utils *utils, int min, int max)
 		{
 			move_top(*utils, current->num, min, max);
 			push_top_b(utils->stack_a, utils->stack_b);
+			if (get_pos(utils->tab, utils->size, (*(utils->stack_b))->num) < utils->size / 2)
+				swap_top_bottom(utils->stack_b, "rb\n");
 			current = *(utils->stack_a);
 			continue;
 		}
@@ -36,10 +53,11 @@ void chunks(chunks_utils *utils, int *tab)
 	int min;
 	int max;
 	int chunk_size_temp;
-	static int last;
+	int last;
 
-	chunk_size_temp = utils->chunks_size;
+	chunk_size_temp = utils->size / 2 + utils->i;
 	max = 0;
+	last = 0;
 	while (last < utils->size && chunk_size_temp > 0)
 	{
 		last++;
@@ -47,7 +65,13 @@ void chunks(chunks_utils *utils, int *tab)
 		chunk_size_temp--;
 	}
 	max = tab[max - 1];
-	min = tab[0];
+	if ((utils->size / 2 - utils->i) < 0)
+	{
+		max = tab[utils->size - 1];
+		min = tab[0];
+	}
+	else
+		min = tab[utils->size / 2 - utils->i];
 	chunk_work(utils, min, max);
 }
 
@@ -60,14 +84,14 @@ void last_sort(t_stack **stack_a, t_stack **stack_b)
 	utils.chunks_size = utils.size / 8;
 	if (utils.size >= 500)
 		utils.chunks_size = utils.size / 11;
-	utils.i = 0;
+	utils.i = utils.chunks_size;
 	utils.tab = malloc(sizeof(int) * utils.size);
 	utils.stack_a = stack_a;
 	utils.stack_b = stack_b;
 	sort(utils.tab, *stack_a, utils.size);
 	while (*stack_a)
 	{
-		chunks(&utils, &(utils.tab[utils.i]));
+		chunks(&utils, utils.tab);
 		utils.i += utils.chunks_size;
 	}
 	while (*stack_b)
