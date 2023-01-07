@@ -6,7 +6,7 @@
 /*   By: ybel-hac <ybel-hac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/05 22:33:37 by ybel-hac          #+#    #+#             */
-/*   Updated: 2023/01/07 00:34:16 by ybel-hac         ###   ########.fr       */
+/*   Updated: 2023/01/07 22:55:55 by ybel-hac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,11 +65,8 @@ void chunks(chunks_utils *utils, int *tab)
 		chunk_size_temp--;
 	}
 	max = tab[max - 1];
-	if ((utils->size / 2 - utils->i) < 0)
-	{
-		max = tab[utils->size - 1];
+	if (utils->size / 2 - utils->i <= 0)
 		min = tab[0];
-	}
 	else
 		min = tab[utils->size / 2 - utils->i];
 	chunk_work(utils, min, max);
@@ -83,7 +80,7 @@ void last_sort(t_stack **stack_a, t_stack **stack_b)
 	utils.size = get_size(*stack_a);
 	utils.chunks_size = utils.size / 8;
 	if (utils.size >= 500)
-		utils.chunks_size = utils.size / 11;
+		utils.chunks_size = utils.size / 18;
 	utils.i = utils.chunks_size;
 	utils.tab = malloc(sizeof(int) * utils.size);
 	utils.stack_a = stack_a;
