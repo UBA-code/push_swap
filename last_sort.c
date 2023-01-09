@@ -6,11 +6,25 @@
 /*   By: ybel-hac <ybel-hac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/05 22:33:37 by ybel-hac          #+#    #+#             */
-/*   Updated: 2023/01/07 22:55:55 by ybel-hac         ###   ########.fr       */
+/*   Updated: 2023/01/09 15:08:26 by ybel-hac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+int check_sorted(t_stack *stack)
+{
+	t_stack *current;
+
+	current = stack;
+	while (current->next)
+	{
+		if (current->num > current->next->num)
+			return (0);
+		current = current->next;
+	}
+	return (1);
+}
 
 int get_pos(int *tab, int size, int num)
 {
@@ -78,9 +92,10 @@ void last_sort(t_stack **stack_a, t_stack **stack_b)
 	int max;
 
 	utils.size = get_size(*stack_a);
+	utils.size_const = utils.size;
 	utils.chunks_size = utils.size / 8;
 	if (utils.size >= 500)
-		utils.chunks_size = utils.size / 18;
+		utils.chunks_size = utils.size / 19;
 	utils.i = utils.chunks_size;
 	utils.tab = malloc(sizeof(int) * utils.size);
 	utils.stack_a = stack_a;
@@ -93,9 +108,9 @@ void last_sort(t_stack **stack_a, t_stack **stack_b)
 	}
 	while (*stack_b)
 	{
-		max = get_max(*stack_b);
-		best_move_top(utils, stack_b, max);
-		push_top_a(stack_a, stack_b);
+		max = utils.tab[--(utils.size)];
+		if (best_move_top(utils, stack_b, max))
+			push_top_a(stack_a, stack_b);
 	}
 	free(utils.tab);
 }

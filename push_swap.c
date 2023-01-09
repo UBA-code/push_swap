@@ -6,7 +6,7 @@
 /*   By: ybel-hac <ybel-hac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 18:11:12 by ybel-hac          #+#    #+#             */
-/*   Updated: 2023/01/07 22:26:31 by ybel-hac         ###   ########.fr       */
+/*   Updated: 2023/01/09 15:09:07 by ybel-hac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,8 @@ int main (int argc, char **argv)
 	// sort_three(&stack_a);
 	// sort_five(&stack_a, &stack_b);
 	last_sort(&stack_a, &stack_b);
+	while (!check_sorted(stack_a))
+		swap_bottom_top(&stack_a, "rra\n");
 	// printf("\nstack a\n\n");
 	// print_list(stack_a);
 	// printf("------------\nstack b\n\n");

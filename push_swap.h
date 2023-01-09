@@ -6,7 +6,7 @@
 /*   By: ybel-hac <ybel-hac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 18:08:30 by ybel-hac          #+#    #+#             */
-/*   Updated: 2023/01/07 22:52:32 by ybel-hac         ###   ########.fr       */
+/*   Updated: 2023/01/09 14:20:43 by ybel-hac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ typedef struct s_chunks_utils
 	int chunks_size;
 	t_stack **stack_a;
 	t_stack **stack_b;
+	int size_const;
 } chunks_utils;
 
 char	**ft_split(char const *s, char c);
@@ -68,10 +69,11 @@ int	get_min(t_stack *stack);
 void last_sort(t_stack **stack_a, t_stack **stack_b);
 void	ft_swap(int *n1, int *n2);
 void move_top(chunks_utils utils, int num, int min, int max);
-void	best_move_top(chunks_utils utils, t_stack **stack, int num);
+int	best_move_top(chunks_utils utils, t_stack **stack, int num);
 int get_size(t_stack *stack);
 void sort(int *tab, t_stack *stack, int size);
 int get_pos(int *tab, int size, int num);
+int check_sorted(t_stack *stack);
 
 
 
