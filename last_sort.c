@@ -6,7 +6,7 @@
 /*   By: ybel-hac <ybel-hac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/05 22:33:37 by ybel-hac          #+#    #+#             */
-/*   Updated: 2023/01/09 15:08:26 by ybel-hac         ###   ########.fr       */
+/*   Updated: 2023/01/09 20:45:15 by ybel-hac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int get_pos(int *tab, int size, int num)
 }
 
 // search in range of chanks for numbers and pushing him to stack b
-void chunk_work(chunks_utils *utils, int min, int max)
+void chunk_work(t_chunks_utils *utils, int min, int max)
 {
 	t_stack *current;
 
@@ -62,7 +62,7 @@ void chunk_work(chunks_utils *utils, int min, int max)
 	}
 }
 
-void chunks(chunks_utils *utils, int *tab)
+void chunks(t_chunks_utils *utils, int *tab)
 {
 	int min;
 	int max;
@@ -88,14 +88,14 @@ void chunks(chunks_utils *utils, int *tab)
 
 void last_sort(t_stack **stack_a, t_stack **stack_b)
 {
-	chunks_utils utils;
+	t_chunks_utils utils;
 	int max;
 
 	utils.size = get_size(*stack_a);
 	utils.size_const = utils.size;
-	utils.chunks_size = utils.size / 8;
+	utils.chunks_size = utils.size / 5;
 	if (utils.size >= 500)
-		utils.chunks_size = utils.size / 19;
+		utils.chunks_size = utils.size / 11;
 	utils.i = utils.chunks_size;
 	utils.tab = malloc(sizeof(int) * utils.size);
 	utils.stack_a = stack_a;
