@@ -6,7 +6,7 @@
 /*   By: ybel-hac <ybel-hac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 18:11:12 by ybel-hac          #+#    #+#             */
-/*   Updated: 2023/01/10 16:30:43 by ybel-hac         ###   ########.fr       */
+/*   Updated: 2023/01/10 17:23:36 by ybel-hac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	basic_sort(t_stack **stack_a, t_stack **stack_b)
 {
-	int size;
-	int min;
+	int	size;
+	int	min;
 
 	size = get_size(*stack_a);
 	if (size == 2)

@@ -6,7 +6,7 @@
 /*   By: ybel-hac <ybel-hac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 17:50:34 by ybel-hac          #+#    #+#             */
-/*   Updated: 2023/01/10 17:20:20 by ybel-hac         ###   ########.fr       */
+/*   Updated: 2023/01/10 17:23:01 by ybel-hac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,8 +61,8 @@ static int	skip_sign(char *nb, int *i, int *sign)
 
 long long	ft_atoi(char *nb)
 {
-	size_t	i;
-	int		sign;
+	size_t		i;
+	int			sign;
 	long long	n;
 
 	i = 0;

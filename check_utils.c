@@ -6,30 +6,30 @@
 /*   By: ybel-hac <ybel-hac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 19:01:26 by ybel-hac          #+#    #+#             */
-/*   Updated: 2023/01/10 17:20:46 by ybel-hac         ###   ########.fr       */
+/*   Updated: 2023/01/10 18:08:05 by ybel-hac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void check_num(char *num)
+void	check_num(char *num)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (num[i])
 	{
-		if (!((num[i] >= '0' && num[i] <= '9') ||
-			num[i] == '-' || num[i] == '+') || num[i] == ' ')
+		if (!((num[i] >= '0' && num[i] <= '9')
+				|| num[i] == '-' || num[i] == '+') || num[i] == ' ')
 			ft_error("Error\n");
 		i++;
 	}
 }
 
-void check_dup(char **args)
+void	check_dup(char **args)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	i = 0;
 	while (args[i])
@@ -68,16 +68,3 @@ char	**check_args(int *len, char **argv)
 	*len = i;
 	return (args);
 }
-/*
-int	get_tab_len(char **tab)
-{
-	int i;
-
-	i = 0;
-	while (tab[i])
-	{
-		i++;
-	}
-	return (i);
-}
-*/
