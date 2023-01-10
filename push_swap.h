@@ -6,7 +6,7 @@
 /*   By: ybel-hac <ybel-hac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 18:08:30 by ybel-hac          #+#    #+#             */
-/*   Updated: 2023/01/10 12:45:52 by ybel-hac         ###   ########.fr       */
+/*   Updated: 2023/01/10 17:20:09 by ybel-hac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ char	*ft_strdup(const char *s1);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 size_t	ft_strlen(const char *s);
 void	ft_error(char *msg);
-int		ft_atoi(char *nb);
+long long ft_atoi(char *nb);
 void	stack_sorted(char **args);
 void	lst_new_add_back(int nb, t_stack **head);
 t_stack	*create_stack(char **argv, int len);
@@ -69,7 +69,7 @@ int		get_max(t_stack *stack);
 int		get_min(t_stack *stack);
 void	last_sort(t_stack **stack_a, t_stack **stack_b);
 void	ft_swap(int *n1, int *n2);
-void	move_top(t_chunks_utils utils, int num, int min, int max);
+void	move_top(t_chunks_utils utils, int num);
 int		best_move_top(t_chunks_utils utils, t_stack **stack, int num);
 int		get_size(t_stack *stack);
 void	sort(int *tab, t_stack *stack, int size);

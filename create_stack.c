@@ -6,7 +6,7 @@
 /*   By: ybel-hac <ybel-hac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 21:36:18 by ybel-hac          #+#    #+#             */
-/*   Updated: 2023/01/10 12:36:40 by ybel-hac         ###   ########.fr       */
+/*   Updated: 2023/01/10 13:01:38 by ybel-hac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ void	lst_new_add_back(int nb, t_stack **head)
 		current->next = new;
 	}
 }
-
 
 t_stack	*create_stack(char **argv, int len)
 {

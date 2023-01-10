@@ -6,7 +6,7 @@
 /*   By: ybel-hac <ybel-hac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 17:50:34 by ybel-hac          #+#    #+#             */
-/*   Updated: 2023/01/10 12:41:49 by ybel-hac         ###   ########.fr       */
+/*   Updated: 2023/01/10 17:20:20 by ybel-hac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	stack_sorted(char **args)
 		else
 			return ;
 	}
-	exit(1);
+	exit(0);
 }
 
 static int	skip_sign(char *nb, int *i, int *sign)
@@ -59,17 +59,17 @@ static int	skip_sign(char *nb, int *i, int *sign)
 	return (1);
 }
 
-int	ft_atoi(char *nb)
+long long	ft_atoi(char *nb)
 {
-	int	i;
-	int	sign;
-	int	n;
+	size_t	i;
+	int		sign;
+	long long	n;
 
 	i = 0;
 	n = 0;
 	while ((nb[i] >= 9 && nb[i] <= 13) || nb[i] == ' ')
 		i++;
-	if (!skip_sign(nb, &i, &sign))
+	if (!skip_sign(nb, (int *)&i, &sign))
 		ft_error("Error\n");
 	while (nb[i] >= '0' && nb[i] <= '9')
 	{

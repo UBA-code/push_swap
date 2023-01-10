@@ -6,13 +6,13 @@
 /*   By: ybel-hac <ybel-hac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 18:23:52 by ybel-hac          #+#    #+#             */
-/*   Updated: 2023/01/10 12:42:22 by ybel-hac         ###   ########.fr       */
+/*   Updated: 2023/01/10 13:00:01 by ybel-hac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	move_top(t_chunks_utils utils, int num, int min, int max)
+void	move_top(t_chunks_utils utils, int num)
 {
 	int		i;
 	t_stack	*current;

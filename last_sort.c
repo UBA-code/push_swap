@@ -6,12 +6,13 @@
 /*   By: ybel-hac <ybel-hac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/05 22:33:37 by ybel-hac          #+#    #+#             */
-/*   Updated: 2023/01/10 12:46:28 by ybel-hac         ###   ########.fr       */
+/*   Updated: 2023/01/10 13:03:06 by ybel-hac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+// check if stack is sorted
 int	check_sorted(t_stack *stack)
 {
 	t_stack	*current;
@@ -26,6 +27,7 @@ int	check_sorted(t_stack *stack)
 	return (1);
 }
 
+// get position index of number
 int	get_pos(int *tab, int size, int num)
 {
 	int	i;
@@ -41,7 +43,7 @@ int	get_pos(int *tab, int size, int num)
 	return (0);
 }
 
-// search in range of chanks for numbers and pushing him to stack b
+// search in range of chunks for numbers and pushing him to stack b
 void	chunk_work(t_chunks_utils *utils, int min, int max)
 {
 	t_stack	*current;
@@ -51,7 +53,7 @@ void	chunk_work(t_chunks_utils *utils, int min, int max)
 	{
 		if (current->num >= min && current->num <= max)
 		{
-			move_top(*utils, current->num, min, max);
+			move_top(*utils, current->num);
 			push_top_b(utils->stack_a, utils->stack_b);
 			if (get_pos(utils->tab, utils->size,
 					(*(utils->stack_b))->num) < utils->size / 2)
@@ -63,6 +65,7 @@ void	chunk_work(t_chunks_utils *utils, int min, int max)
 	}
 }
 
+// get range of chunks, get min and max
 void	chunks(t_chunks_utils *utils, int *tab)
 {
 	int	min;
