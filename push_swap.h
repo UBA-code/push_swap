@@ -6,7 +6,7 @@
 /*   By: ybel-hac <ybel-hac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 18:08:30 by ybel-hac          #+#    #+#             */
-/*   Updated: 2023/01/10 17:24:22 by ybel-hac         ###   ########.fr       */
+/*   Updated: 2023/01/10 18:26:12 by ybel-hac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 # include <limits.h>
 # include <stdint.h>
 # include <stdio.h>
-
+# include "get_next_line.h"
 typedef struct s_stack
 {
 	int				num;
