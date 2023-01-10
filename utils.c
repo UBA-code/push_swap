@@ -6,7 +6,7 @@
 /*   By: ybel-hac <ybel-hac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 17:50:34 by ybel-hac          #+#    #+#             */
-/*   Updated: 2022/12/13 15:46:14 by ybel-hac         ###   ########.fr       */
+/*   Updated: 2023/01/10 12:41:49 by ybel-hac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ size_t	ft_strlen(const char *s)
 
 void	stack_sorted(char **args)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	i = 0;
 	j = 0;
@@ -43,7 +43,7 @@ void	stack_sorted(char **args)
 
 static int	skip_sign(char *nb, int *i, int *sign)
 {
-	int j;
+	int	j;
 
 	j = 0;
 	*sign = 1;
@@ -61,9 +61,9 @@ static int	skip_sign(char *nb, int *i, int *sign)
 
 int	ft_atoi(char *nb)
 {
-	int i;
+	int	i;
 	int	sign;
-	int n;
+	int	n;
 
 	i = 0;
 	n = 0;
@@ -82,12 +82,12 @@ int	ft_atoi(char *nb)
 
 void	ft_error(char *msg)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (msg[i])
 	{
-		write(2, &msg[i],1);
+		write(2, &msg[i], 1);
 		i++;
 	}
 	exit(1);

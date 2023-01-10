@@ -6,16 +6,16 @@
 /*   By: ybel-hac <ybel-hac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 21:36:18 by ybel-hac          #+#    #+#             */
-/*   Updated: 2022/12/13 16:24:08 by ybel-hac         ###   ########.fr       */
+/*   Updated: 2023/01/10 12:36:40 by ybel-hac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void lst_new_add_back(int nb, t_stack **head)
+void	lst_new_add_back(int nb, t_stack **head)
 {
-	t_stack *new;
-	t_stack *current;
+	t_stack	*new;
+	t_stack	*current;
 
 	new = malloc(sizeof(t_stack));
 	current = *head;
@@ -36,8 +36,8 @@ void lst_new_add_back(int nb, t_stack **head)
 
 t_stack	*create_stack(char **argv, int len)
 {
-	t_stack *stack;
-	int i;
+	t_stack	*stack;
+	int		i;
 
 	i = 0;
 	stack = NULL;

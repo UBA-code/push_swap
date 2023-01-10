@@ -6,15 +6,15 @@
 /*   By: ybel-hac <ybel-hac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/03 00:18:47 by ybel-hac          #+#    #+#             */
-/*   Updated: 2023/01/03 01:39:12 by ybel-hac         ###   ########.fr       */
+/*   Updated: 2023/01/10 12:39:37 by ybel-hac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int get_size(t_stack *stack)
+int	get_size(t_stack *stack)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (stack->next)
@@ -26,10 +26,10 @@ int get_size(t_stack *stack)
 	return (i);
 }
 
-int get_position(t_stack *stack, int num)
+int	get_position(t_stack *stack, int num)
 {
-	int i;
-	int len;
+	int	i;
+	int	len;
 
 	i = 0;
 	len = get_size(stack);
@@ -49,9 +49,9 @@ int get_position(t_stack *stack, int num)
 	return (0);
 }
 
-void stack_to_arr(t_stack *stack, int *tab)
+void	stack_to_arr(t_stack *stack, int *tab)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (stack->next)
@@ -63,10 +63,10 @@ void stack_to_arr(t_stack *stack, int *tab)
 	tab[i] = stack->num;
 }
 
-void sort(int *tab, t_stack *stack, int size)
+void	sort(int *tab, t_stack *stack, int size)
 {
-	int i;
-	int x;
+	int	i;
+	int	x;
 
 	i = 0;
 	stack_to_arr(stack, tab);

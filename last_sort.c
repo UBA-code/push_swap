@@ -6,15 +6,15 @@
 /*   By: ybel-hac <ybel-hac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/05 22:33:37 by ybel-hac          #+#    #+#             */
-/*   Updated: 2023/01/09 20:45:15 by ybel-hac         ###   ########.fr       */
+/*   Updated: 2023/01/10 12:46:28 by ybel-hac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int check_sorted(t_stack *stack)
+int	check_sorted(t_stack *stack)
 {
-	t_stack *current;
+	t_stack	*current;
 
 	current = stack;
 	while (current->next)
@@ -26,9 +26,9 @@ int check_sorted(t_stack *stack)
 	return (1);
 }
 
-int get_pos(int *tab, int size, int num)
+int	get_pos(int *tab, int size, int num)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (size > 0)
@@ -42,9 +42,9 @@ int get_pos(int *tab, int size, int num)
 }
 
 // search in range of chanks for numbers and pushing him to stack b
-void chunk_work(t_chunks_utils *utils, int min, int max)
+void	chunk_work(t_chunks_utils *utils, int min, int max)
 {
-	t_stack *current;
+	t_stack	*current;
 
 	current = *(utils->stack_a);
 	while (current)
@@ -53,21 +53,22 @@ void chunk_work(t_chunks_utils *utils, int min, int max)
 		{
 			move_top(*utils, current->num, min, max);
 			push_top_b(utils->stack_a, utils->stack_b);
-			if (get_pos(utils->tab, utils->size, (*(utils->stack_b))->num) < utils->size / 2)
+			if (get_pos(utils->tab, utils->size,
+					(*(utils->stack_b))->num) < utils->size / 2)
 				swap_top_bottom(utils->stack_b, "rb\n");
 			current = *(utils->stack_a);
-			continue;
+			continue ;
 		}
 		current = current->next;
 	}
 }
 
-void chunks(t_chunks_utils *utils, int *tab)
+void	chunks(t_chunks_utils *utils, int *tab)
 {
-	int min;
-	int max;
-	int chunk_size_temp;
-	int last;
+	int	min;
+	int	max;
+	int	chunk_size_temp;
+	int	last;
 
 	chunk_size_temp = utils->size / 2 + utils->i;
 	max = 0;
@@ -86,10 +87,10 @@ void chunks(t_chunks_utils *utils, int *tab)
 	chunk_work(utils, min, max);
 }
 
-void last_sort(t_stack **stack_a, t_stack **stack_b)
+void	last_sort(t_stack **stack_a, t_stack **stack_b)
 {
-	t_chunks_utils utils;
-	int max;
+	t_chunks_utils	utils;
+	int				max;
 
 	utils.size = get_size(*stack_a);
 	utils.size_const = utils.size;

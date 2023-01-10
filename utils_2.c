@@ -6,16 +6,16 @@
 /*   By: ybel-hac <ybel-hac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 18:23:52 by ybel-hac          #+#    #+#             */
-/*   Updated: 2023/01/09 20:45:15 by ybel-hac         ###   ########.fr       */
+/*   Updated: 2023/01/10 12:42:22 by ybel-hac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void move_top(t_chunks_utils utils, int num, int min, int max)
+void	move_top(t_chunks_utils utils, int num, int min, int max)
 {
-	int i;
-	t_stack *current;
+	int		i;
+	t_stack	*current;
 
 	current = *(utils.stack_a);
 	i = 0;
@@ -25,21 +25,22 @@ void move_top(t_chunks_utils utils, int num, int min, int max)
 		{
 			while ((*(utils.stack_a))->num != num)
 				swap_top_bottom(utils.stack_a, "ra\n");
-			return;
+			return ;
 		}
 		else if (current->num == num && i >= get_size(*(utils.stack_a)) / 2)
 		{
 			while ((*(utils.stack_a))->num != num)
 				swap_bottom_top(utils.stack_a, "rra\n");
-			return;
+			return ;
 		}
 		current = current->next;
 	}
 }
 
-int check_bottom_number(t_chunks_utils utils)
+int	check_bottom_number(t_chunks_utils utils)
 {
-	if ((*(utils.stack_b))->num > get_last(*(utils.stack_a)) || get_last(*(utils.stack_a)) == utils.tab[utils.size_const - 1])
+	if ((*(utils.stack_b))->num > get_last(*(utils.stack_a))
+		|| get_last(*(utils.stack_a)) == utils.tab[utils.size_const - 1])
 	{
 		push_top_a(utils.stack_a, utils.stack_b);
 		swap_top_bottom(utils.stack_a, "ra\n");
@@ -48,30 +49,30 @@ int check_bottom_number(t_chunks_utils utils)
 	return (0);
 }
 
-void move_help(t_chunks_utils utils, int num, char c)
+void	move_help(t_chunks_utils utils, int num, char c)
 {
 	if (c == '1')
 	{
 		while ((*(utils.stack_b))->num != num)
 		{
 			if (check_bottom_number(utils))
-				continue;
+				continue ;
 			swap_top_bottom(utils.stack_b, "rb\n");
 		}
-		return;
+		return ;
 	}
 	while ((*(utils.stack_b))->num != num)
 	{
 		if (check_bottom_number(utils))
-			continue;
+			continue ;
 		swap_bottom_top(utils.stack_b, "rrb\n");
 	}
 }
 
-int best_move_top(t_chunks_utils utils, t_stack **stack, int num)
+int	best_move_top(t_chunks_utils utils, t_stack **stack, int num)
 {
-	t_stack *current;
-	int i;
+	t_stack	*current;
+	int		i;
 
 	i = 0;
 	current = *stack;

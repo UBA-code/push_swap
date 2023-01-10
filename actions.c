@@ -6,7 +6,7 @@
 /*   By: ybel-hac <ybel-hac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 16:25:52 by ybel-hac          #+#    #+#             */
-/*   Updated: 2023/01/07 22:43:06 by ybel-hac         ###   ########.fr       */
+/*   Updated: 2023/01/10 12:35:35 by ybel-hac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	swap_top_two(t_stack **stack, char *str)
 {
-	t_stack *first;
-	t_stack *second;
-	t_stack temp;
+	t_stack	*first;
+	t_stack	*second;
+	t_stack	temp;
 
 	if ((*(stack))->next == 0)
 		return ;
@@ -48,8 +48,8 @@ void	swap_top_bottom(t_stack **stack, char *str)
 
 void	swap_bottom_top(t_stack	**stack, char *str)
 {
-	t_stack *first;
-	t_stack *last;
+	t_stack	*first;
+	t_stack	*last;
 	t_stack	*before_last;
 
 	if ((*(stack))->next == 0)
@@ -82,8 +82,8 @@ void	push_top_a(t_stack **stack_a, t_stack **stack_b)
 
 void	push_top_b(t_stack **stack_a, t_stack **stack_b)
 {
-	t_stack *element_a;
-	t_stack *element_b;
+	t_stack	*element_a;
+	t_stack	*element_b;
 
 	element_a = *stack_a;
 	*stack_a = element_a->next;

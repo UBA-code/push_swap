@@ -6,15 +6,15 @@
 /*   By: ybel-hac <ybel-hac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 18:11:12 by ybel-hac          #+#    #+#             */
-/*   Updated: 2023/01/09 16:32:55 by ybel-hac         ###   ########.fr       */
+/*   Updated: 2023/01/10 12:37:43 by ybel-hac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void print_list(t_stack *head)
+void	print_list(t_stack *head)
 {
-	t_stack *temp;
+	t_stack	*temp;
 
 	temp = head;
 	while (temp)
@@ -24,11 +24,11 @@ void print_list(t_stack *head)
 	}
 }
 
-int main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
-	t_stack *stack_a;
-	t_stack *stack_b;
-	char **args;
+	t_stack	*stack_a;
+	t_stack	*stack_b;
+	char	**args;
 
 	args = check_args(&argc, argv + 1);
 	stack_a = create_stack(args, argc);

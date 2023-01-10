@@ -6,7 +6,7 @@
 /*   By: ybel-hac <ybel-hac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 19:01:26 by ybel-hac          #+#    #+#             */
-/*   Updated: 2022/12/13 18:13:35 by ybel-hac         ###   ########.fr       */
+/*   Updated: 2023/01/10 12:36:20 by ybel-hac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 char	**check_args(int *len, char **argv)
 {
-	int i;
-	int j;
-	char **args;
-	int temp_nb;
+	int		i;
+	int		j;
+	char	**args;
+	int		temp_nb;
 
 	i = 0;
 	args = argv;

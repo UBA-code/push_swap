@@ -6,7 +6,7 @@
 /*   By: ybel-hac <ybel-hac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 21:36:55 by ybel-hac          #+#    #+#             */
-/*   Updated: 2023/01/02 02:25:11 by ybel-hac         ###   ########.fr       */
+/*   Updated: 2023/01/10 12:36:09 by ybel-hac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	case_one(t_stack **stack)
 {
-	int last;
+	int	last;
 
 	last = get_last(*stack);
 	if ((*stack)->num > (*stack)->next->num && (*stack)->next->num < last
@@ -28,7 +28,7 @@ int	case_one(t_stack **stack)
 
 int	case_two(t_stack **stack)
 {
-	int last;
+	int	last;
 
 	last = get_last(*stack);
 	if ((*stack)->num > (*stack)->next->num && (*stack)->next->num > last
@@ -43,7 +43,7 @@ int	case_two(t_stack **stack)
 
 int	case_three(t_stack **stack)
 {
-	int last;
+	int	last;
 
 	last = get_last(*stack);
 	if ((*stack)->num > (*stack)->next->num && (*stack)->next->num < last
@@ -57,7 +57,7 @@ int	case_three(t_stack **stack)
 
 int	case_four(t_stack **stack)
 {
-	int last;
+	int	last;
 
 	last = get_last(*stack);
 	if ((*stack)->num < (*stack)->next->num && (*stack)->next->num > last
@@ -72,7 +72,7 @@ int	case_four(t_stack **stack)
 
 int	case_five(t_stack **stack)
 {
-	int last;
+	int	last;
 
 	last = get_last(*stack);
 	if ((*stack)->num < (*stack)->next->num && (*stack)->next->num > last

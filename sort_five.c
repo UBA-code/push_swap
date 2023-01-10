@@ -6,7 +6,7 @@
 /*   By: ybel-hac <ybel-hac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/16 15:36:58 by ybel-hac          #+#    #+#             */
-/*   Updated: 2023/01/02 22:36:50 by ybel-hac         ###   ########.fr       */
+/*   Updated: 2023/01/10 12:43:14 by ybel-hac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	get_max(t_stack *stack)
 {
-	int num;
+	int	num;
 
 	if (!stack)
 		return (0);
@@ -32,7 +32,7 @@ int	get_max(t_stack *stack)
 
 int	get_min(t_stack *stack)
 {
-	int num;
+	int	num;
 
 	if (!stack)
 		return (0);
@@ -50,9 +50,9 @@ int	get_min(t_stack *stack)
 
 void	swap_max_min_top(t_stack **stack_a, t_stack **stack_b)
 {
-	int max;
-	int min;
-	int counter;
+	int	max;
+	int	min;
+	int	counter;
 
 	counter = 0;
 	max = get_max(*stack_a);
@@ -71,7 +71,7 @@ void	swap_max_min_top(t_stack **stack_a, t_stack **stack_b)
 
 void	sort_five(t_stack **stack_a, t_stack **stack_b)
 {
-	int min;
+	int	min;
 
 	min = get_min(*stack_a);
 	swap_max_min_top(stack_a, stack_b);
@@ -82,4 +82,3 @@ void	sort_five(t_stack **stack_a, t_stack **stack_b)
 	push_top_a(stack_a, stack_b);
 	swap_top_bottom(stack_a, "ra\n");
 }
-
