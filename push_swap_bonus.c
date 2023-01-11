@@ -6,7 +6,7 @@
 /*   By: ybel-hac <ybel-hac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 18:16:32 by ybel-hac          #+#    #+#             */
-/*   Updated: 2023/01/11 15:19:22 by ybel-hac         ###   ########.fr       */
+/*   Updated: 2023/01/11 16:53:19 by ybel-hac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,7 +99,7 @@ int	main(int argc, char **argv)
 	utils.args = check_args(&argc, argv + 1);
 	utils.stack_a = create_stack(utils.args, argc);
 	utils.stack_b = NULL;
-	utils.actions = get_actions(void);
+	utils.actions = get_actions();
 	utils.stack_a_add = &(utils.stack_a);
 	utils.stack_b_add = &(utils.stack_b);
 	sort_work(utils, utils.stack_a_add, utils.stack_b_add);
