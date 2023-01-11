@@ -6,7 +6,7 @@
 /*   By: ybel-hac <ybel-hac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 18:08:30 by ybel-hac          #+#    #+#             */
-/*   Updated: 2023/01/10 18:26:12 by ybel-hac         ###   ########.fr       */
+/*   Updated: 2023/01/11 15:21:31 by ybel-hac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 # include <stdint.h>
 # include <stdio.h>
 # include "get_next_line.h"
+
 typedef struct s_stack
 {
 	int				num;
@@ -36,6 +37,17 @@ typedef struct s_t_chunks_utils
 	t_stack	**stack_b;
 	int		size_const;
 }	t_chunks_utils;
+
+typedef struct s_bonus_utils
+{
+	t_stack	*stack_a;
+	t_stack	*stack_b;
+	int		size;
+	char	**actions;
+	char	**args;
+	t_stack	**stack_a_add;
+	t_stack	**stack_b_add;
+}	t_bonus_utils;
 
 char		**ft_split(char const *s, char c);
 char		*ft_strdup(const char *s1);
@@ -75,7 +87,14 @@ int			get_size(t_stack *stack);
 void		sort(int *tab, t_stack *stack, int size);
 int			get_pos(int *tab, int size, int num);
 int			check_sorted(t_stack *stack);
-
-void		print_list(t_stack *head);
+void		swap_top_two_bonus(t_stack **stack);
+void		swap_top_bottom_bonus(t_stack **stack);
+void		swap_bottom_top_bonus(t_stack	**stack);
+void		push_top_a_bonus(t_stack **stack_a, t_stack **stack_b);
+void		push_top_b_bonus(t_stack **stack_a, t_stack **stack_b);
+void		ss_bonus(t_stack **stack_a, t_stack **stack_b);
+void		rr_bonus(t_stack **stack_a, t_stack **stack_b);
+void		rrr_bonus(t_stack **stack_a, t_stack **stack_b);
+int			ft_strcmp(char *s1, char *s2);
 
 #endif

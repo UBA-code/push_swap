@@ -6,7 +6,7 @@
 /*   By: ybel-hac <ybel-hac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 20:43:17 by ybel-hac          #+#    #+#             */
-/*   Updated: 2023/01/10 12:39:58 by ybel-hac         ###   ########.fr       */
+/*   Updated: 2023/01/11 15:17:11 by ybel-hac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,4 +50,18 @@ void	ft_swap(int *n1, int *n2)
 	temp = *n1;
 	*n1 = *n2;
 	*n2 = temp;
+}
+
+int	ft_strcmp(char *s1, char *s2)
+{
+	int	i;
+
+	i = 0;
+	while (s1[i] || s2[i])
+	{
+		if (s1[i] != s2[i])
+			return (0);
+		i++;
+	}
+	return (1);
 }

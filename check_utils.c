@@ -6,7 +6,7 @@
 /*   By: ybel-hac <ybel-hac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 19:01:26 by ybel-hac          #+#    #+#             */
-/*   Updated: 2023/01/10 18:08:05 by ybel-hac         ###   ########.fr       */
+/*   Updated: 2023/01/11 13:38:54 by ybel-hac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	check_num(char *num)
 	int	i;
 
 	i = 0;
+	if (ft_strlen(num) == 0)
+		ft_error("Error\n");
 	while (num[i])
 	{
 		if (!((num[i] >= '0' && num[i] <= '9')

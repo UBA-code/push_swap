@@ -6,7 +6,7 @@
 /*   By: ybel-hac <ybel-hac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 18:11:12 by ybel-hac          #+#    #+#             */
-/*   Updated: 2023/01/10 21:06:17 by ybel-hac         ###   ########.fr       */
+/*   Updated: 2023/01/11 15:14:57 by ybel-hac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,18 +28,6 @@ void	basic_sort(t_stack **stack_a, t_stack **stack_b)
 		push_top_b(stack_a, stack_b);
 		sort_three(stack_a);
 		push_top_a(stack_a, stack_b);
-	}
-}
-
-void	print_list(t_stack *head)
-{
-	t_stack	*temp;
-
-	temp = head;
-	while (temp)
-	{
-		printf("%d\n", temp->num);
-		temp = temp->next;
 	}
 }
 
