@@ -6,7 +6,7 @@
 /*   By: ybel-hac <ybel-hac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 18:16:32 by ybel-hac          #+#    #+#             */
-/*   Updated: 2023/01/11 16:53:19 by ybel-hac         ###   ########.fr       */
+/*   Updated: 2023/01/12 13:58:29 by ybel-hac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ char	**get_actions(void)
 		actions_tab = get_next_line(0);
 	}
 	splited = ft_split(final_tab, '\n');
+	free(final_tab);
 	return (splited);
 }
 
@@ -103,4 +104,5 @@ int	main(int argc, char **argv)
 	utils.stack_a_add = &(utils.stack_a);
 	utils.stack_b_add = &(utils.stack_b);
 	sort_work(utils, utils.stack_a_add, utils.stack_b_add);
+	return (0);
 }
