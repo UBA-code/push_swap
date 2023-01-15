@@ -6,7 +6,7 @@
 /*   By: ybel-hac <ybel-hac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 19:01:26 by ybel-hac          #+#    #+#             */
-/*   Updated: 2023/01/11 13:38:54 by ybel-hac         ###   ########.fr       */
+/*   Updated: 2023/01/15 16:18:31 by ybel-hac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ void	check_num(char *num)
 			ft_error("Error\n");
 		i++;
 	}
+	if (!(num[i - 1] >= '0' && num[i - 1] <= '9'))
+		ft_error("Error\n");
 }
 
 void	check_dup(char **args)
