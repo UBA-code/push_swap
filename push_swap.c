@@ -6,7 +6,7 @@
 /*   By: ybel-hac <ybel-hac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 18:11:12 by ybel-hac          #+#    #+#             */
-/*   Updated: 2023/01/12 13:45:39 by ybel-hac         ###   ########.fr       */
+/*   Updated: 2023/01/16 16:36:55 by ybel-hac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int	main(int argc, char **argv)
 	t_stack	*stack_b;
 	char	**args;
 
-	args = check_args(&argc, argv + 1);
+	args = check_args(&argc, argv + 1, "mandatory");
 	stack_a = create_stack(args, argc);
 	stack_b = NULL;
 	if (get_size(stack_a) <= 2 || get_size(stack_a) == 4)

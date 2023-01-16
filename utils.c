@@ -6,7 +6,7 @@
 /*   By: ybel-hac <ybel-hac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 17:50:34 by ybel-hac          #+#    #+#             */
-/*   Updated: 2023/01/10 17:23:01 by ybel-hac         ###   ########.fr       */
+/*   Updated: 2023/01/16 16:31:43 by ybel-hac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ size_t	ft_strlen(const char *s)
 	return (i);
 }
 
-void	stack_sorted(char **args)
+void	stack_sorted(char **args, char *type)
 {
 	int	i;
 	int	j;
@@ -38,7 +38,8 @@ void	stack_sorted(char **args)
 		else
 			return ;
 	}
-	exit(0);
+	if (ft_strcmp(type, "mandatory"))
+		exit(0);
 }
 
 static int	skip_sign(char *nb, int *i, int *sign)

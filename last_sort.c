@@ -6,7 +6,7 @@
 /*   By: ybel-hac <ybel-hac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/05 22:33:37 by ybel-hac          #+#    #+#             */
-/*   Updated: 2023/01/11 13:53:35 by ybel-hac         ###   ########.fr       */
+/*   Updated: 2023/01/16 16:28:51 by ybel-hac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ int	check_sorted(t_stack *stack)
 {
 	t_stack	*current;
 
+	if (!stack)
+		return (1);
 	current = stack;
 	while (current->next)
 	{

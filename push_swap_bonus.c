@@ -6,7 +6,7 @@
 /*   By: ybel-hac <ybel-hac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 18:16:32 by ybel-hac          #+#    #+#             */
-/*   Updated: 2023/01/12 13:58:29 by ybel-hac         ###   ########.fr       */
+/*   Updated: 2023/01/16 16:45:44 by ybel-hac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ char	**get_actions(void)
 	actions_tab = get_next_line(0);
 	final_tab = 0;
 	if (!actions_tab)
-		exit(0);
+		return (0);
 	while (actions_tab)
 	{
 		check_actions(actions_tab);
@@ -82,7 +82,7 @@ void	sort_work(t_bonus_utils utils, t_stack **stack_a, t_stack **stack_b)
 	int	i;
 
 	i = 0;
-	while (utils.actions[i])
+	while (utils.actions && utils.actions[i])
 	{
 		actions_work(utils.actions[i], stack_a, stack_b);
 		i++;
@@ -97,7 +97,7 @@ int	main(int argc, char **argv)
 {
 	t_bonus_utils	utils;
 
-	utils.args = check_args(&argc, argv + 1);
+	utils.args = check_args(&argc, argv + 1, "bonus");
 	utils.stack_a = create_stack(utils.args, argc);
 	utils.stack_b = NULL;
 	utils.actions = get_actions();

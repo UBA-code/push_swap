@@ -6,7 +6,7 @@
 /*   By: ybel-hac <ybel-hac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 18:08:30 by ybel-hac          #+#    #+#             */
-/*   Updated: 2023/01/12 13:57:35 by ybel-hac         ###   ########.fr       */
+/*   Updated: 2023/01/16 16:37:16 by ybel-hac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ char		*ft_substr(char const *s, unsigned int start, size_t len);
 size_t		ft_strlen(const char *s);
 void		ft_error(char *msg);
 long long	ft_atoi(char *nb);
-void		stack_sorted(char **args);
+void		stack_sorted(char **args, char *type);
 void		lst_new_add_back(int nb, t_stack **head);
 t_stack		*create_stack(char **argv, int len);
 void		swap_top_two(t_stack **stack, char *str);
@@ -66,7 +66,7 @@ void		push_top_b(t_stack **stack_a, t_stack **stack_b);
 void		ss(t_stack **stack_a, t_stack **stack_b);
 void		rr(t_stack **stack_a, t_stack **stack_b);
 void		rrr(t_stack **stack_a, t_stack **stack_b);
-char		**check_args(int *len, char **argv);
+char		**check_args(int *len, char **argv, char *type);
 void		ft_putstr(char *str);
 int			get_last(t_stack *stack);
 int			case_one(t_stack **stack);
